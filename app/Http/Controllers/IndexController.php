@@ -9,16 +9,22 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return response('Это главная страница сайта!!')
-                    ->header('Content-Type', 'text/plain');
+        $page = Pages::where('url', 'front')->first();
+        return view('index', ['page' => $page]);
     }
 
-    public function detail(Pages $pages)
+    public function show_page($url)
     {
-        $result = $pages->title . "<br>";
-        $result .= $pages->content . "<br>";
-        $result .= $pages->url . "<br>";
+        $page = Pages::where('url', $url)->first();
+        if($page) {
+            $result = $page->title . "<br>";
+            $result .= $page->content . "<br>";
+            $result .= $page->url . "<br>";
+        } else {
+            abort(404);
+        }
+
         return response($result)
-            ->header('Content-Type', 'text/plain');
+            ->header('Content-Type', 'text/html');
     }
 }
