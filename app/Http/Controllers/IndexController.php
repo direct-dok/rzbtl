@@ -27,4 +27,22 @@ class IndexController extends Controller
         return response($result)
             ->header('Content-Type', 'text/html');
     }
+
+    public function showAddPageForm()
+    {
+        return view('add_page');
+    }
+
+    public function savePage(Request $request)
+    {
+        Pages::create([
+            'title' => $request->title,
+            'content' => $request->content,
+            'url' => $request->url,
+            'description' => $request->description,
+            'keywords' => $request->keywords,
+        ]);
+
+        return redirect()->route('home');
+    }
 }

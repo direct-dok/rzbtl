@@ -9,8 +9,8 @@
 {{--    <meta name="author" content="elemis">--}}
     <title>@yield('title')</title>
     <link rel="shortcut icon" href="./assets/img/favicon.png">
-    <link rel="stylesheet" href="./assets/css/plugins.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
 
 <body>
@@ -131,8 +131,8 @@
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
     </div>
-    <script src="./assets/js/plugins.js"></script>
-    <script src="./assets/js/theme.js"></script>
+    <script src="{{ asset('assets/js/plugins.js') }}"></script>
+    <script src="{{ asset('assets/js/theme.js') }}"></script>
 </body>
 
 </html>

@@ -20,5 +20,7 @@ Route::get('/', [IndexController::class, 'index']);
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/page/add', [IndexController::class, 'showAddPageForm'])->name('page.add');
+Route::post('/page/save', [IndexController::class, 'savePage'])->name('page.save');
 
 Route::get('/{url}', [IndexController::class, 'show_page']);
