@@ -28,6 +28,12 @@ class IndexController extends Controller
             ->header('Content-Type', 'text/html');
     }
 
+    public function showAllPages()
+    {
+        $pages = Pages::all();
+        return view('all_pages', ['pages' => $pages]);
+    }
+
     public function showAddPageForm()
     {
         return view('add_page');
@@ -43,6 +49,36 @@ class IndexController extends Controller
             'keywords' => $request->keywords,
         ]);
 
+        return redirect()->route('home');
+    }
+
+    public function showEditPageForm(Pages $pg)
+    {
+        return view('edit_page', ['page' => $pg]);
+    }
+
+    public function updatePage(Request $request, Pages $pg)
+    {
+        $pg->fill([
+            'title' => $request->title,
+            'content' => $request->content,
+            'url' => $request->url,
+            'description' => $request->description,
+            'keywords' => $request->keywords,
+        ]);
+
+        $pg->save();
+        return redirect()->route('home');
+    }
+
+    public function showDeletePageForm(Pages $pg)
+    {
+        return view('delete_page', ['page' => $pg]);
+    }
+
+    public function deletePage(Pages $pg)
+    {
+        $pg->delete();
         return redirect()->route('home');
     }
 }

@@ -6,7 +6,7 @@
             <div class="container py-8 py-md-10 text-center">
                 <div class="row">
                     <div class="col-lg-10 col-xxl-8 mx-auto">
-                        <h1 class="display-1 mb-1">Создание страницы</h1>
+                        <h1 class="display-1 mb-1">Редактирование страницы</h1>
                     </div>
                     <!-- /column -->
                 </div>
@@ -18,30 +18,33 @@
     </section>
     <section class="wrapper bg-light">
         <div class="container py-8 py-md-10">
-            <form action="{{ route('page.save') }}" method="POST">
+            <form action="{{ route('page.update', ['pg' => $page->id]) }}" method="POST">
                 @csrf
+                @method('PATCH')
                 <div class="form-floating mb-4">
-                    <input id="textInputExample" type="text" class="form-control" placeholder="Text Input" name="title">
+                    <input id="textInputExample" value="{{ $page->title }}" type="text" class="form-control" placeholder="Text Input" name="title">
                     <label for="textInputExample">Название страницы</label>
                 </div>
 
                 <div class="form-floating mb-4">
-                    <textarea id="textareaExample" class="form-control" placeholder="Textarea" style="height: 250px"  name="content" required></textarea>
+                    <textarea id="textareaExample" class="form-control" placeholder="Textarea" style="height: 250px"  name="content" required>
+                        {{ $page->content }}
+                    </textarea>
                     <label for="textareaExample">Содержимое страницы</label>
                 </div>
 
                 <div class="form-floating mb-4">
-                    <input id="textInputExample" type="text" class="form-control" placeholder="Text Input" name="url">
+                    <input id="textInputExample" value="{{ $page->url }}" type="text" class="form-control" placeholder="Text Input" name="url">
                     <label for="textInputExample">Адрес страницы (URL)</label>
                 </div>
 
                 <div class="form-floating mb-4">
-                    <input id="textInputExample" type="text" class="form-control" placeholder="Text Input" name="description">
+                    <input id="textInputExample" value="{{ $page->description }}" type="text" class="form-control" placeholder="Text Input" name="description">
                     <label for="textareaExample">Description (SEO)</label>
                 </div>
 
                 <div class="form-floating mb-4">
-                    <input id="textInputExample" type="text" class="form-control" placeholder="Text Input" name="keywords">
+                    <input id="textInputExample" value="{{ $page->keywords }}" type="text" class="form-control" placeholder="Text Input" name="keywords">
                     <label for="textareaExample">Keywords (SEO)</label>
                 </div>
 

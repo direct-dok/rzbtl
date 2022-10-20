@@ -67,6 +67,8 @@
                                     </a>
                                     <a class="dropdown-item" href="{{ route('page.add') }}">Создать страницу</a>
 
+                                    <a class="dropdown-item" href="{{ route('page.all') }}">Страницы сайта</a>
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>

@@ -15,12 +15,20 @@ use \App\Http\Controllers\HomeController;
 |
 */
 
+/* Маршруты для главной страницы */
 Route::get('/', [IndexController::class, 'index']);
+Route::redirect('/front', '/');
+/* Маршруты для главной страницы */
 
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/page/all', [IndexController::class, 'showAllPages'])->name('page.all');
 Route::get('/page/add', [IndexController::class, 'showAddPageForm'])->name('page.add');
 Route::post('/page/save', [IndexController::class, 'savePage'])->name('page.save');
+Route::get('/page/{pg}/edit', [IndexController::class, 'showEditPageForm'])->name('page.edit');
+Route::patch('/page/{pg}', [IndexController::class, 'updatePage'])->name('page.update');
+Route::get('/page/{pg}/delete', [IndexController::class, 'showDeletePageForm'])->name('page.delete');
+Route::delete('/page/{pg}', [IndexController::class, 'deletePage'])->name('page.destroy');
 
 Route::get('/{url}', [IndexController::class, 'show_page']);

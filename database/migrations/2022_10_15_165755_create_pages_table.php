@@ -21,7 +21,6 @@ class CreatePagesTable extends Migration
             $table->string('keywords', 300);
             $table->string('url', 400);
             $table->timestamps();
-            $table->unique('url');
         });
     }
 
