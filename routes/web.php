@@ -31,4 +31,6 @@ Route::patch('/page/{pg}', [IndexController::class, 'updatePage'])->name('page.u
 Route::get('/page/{pg}/delete', [IndexController::class, 'showDeletePageForm'])->name('page.delete');
 Route::delete('/page/{pg}', [IndexController::class, 'deletePage'])->name('page.destroy');
 
+Route::get('/blog/podstavi/{url}', [BlogController::class, 'blogPost']);
+
 Route::get('/{url}', [IndexController::class, 'show_page']);

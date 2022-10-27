@@ -9,3 +9,17 @@ url
 - articles
 - users
 - roles
+- posts
+id
+title
+content
+img
+create_date
+edit_date
+description
+keywords
+category_id
+- posts_categories
+id
+name
+url
