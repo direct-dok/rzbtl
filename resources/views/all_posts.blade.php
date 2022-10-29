@@ -28,7 +28,7 @@
                                     <div class="card">
                                         <figure class="card-img-top overlay overlay-1 hover-scale">
                                             <a href="/post{{ $categories[$post->category_id]['url'] }}{{ $post->url }}">
-                                                <img src="{{asset('images/' . $post->image)}}">
+                                                <img src="{{asset($post->image)}}">
                                             </a>
                                             <figcaption>
                                                 <h5 class="from-top mb-0">Читать далее</h5>

@@ -1,5 +1,9 @@
 @extends('layouts.layouts_posts')
 
+@section('title', $post->title)
+@section('description', $post->description)
+@section('keywords', $post->keywords)
+
 @section('content')
     <section class="wrapper bg-soft-primary">
         <div class="container pt-10 pb-19 pt-md-14 pb-md-20 text-center">
@@ -14,7 +18,7 @@
                         <!-- /.post-category -->
                         <h1 class="display-1 mb-4">{{ $post->title }}</h1>
                         <ul class="post-meta mb-5">
-                            <li class="post-date"><i class="uil uil-calendar-alt"></i><span>5 Jul 2022</span></li>
+                            <li class="post-date"><i class="uil uil-calendar-alt"></i><span>{{ $post->getDate() }}</span></li>
                             <li class="post-author"><a href="#"><i class="uil uil-user"></i><span>By Sandbox</span></a></li>
                             <li class="post-comments"><a href="#"><i class="uil uil-comment"></i>3<span> Comments</span></a></li>
                             <li class="post-likes"><a href="#"><i class="uil uil-heart-alt"></i>3<span> Likes</span></a></li>

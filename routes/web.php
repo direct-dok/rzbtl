@@ -32,7 +32,9 @@ Route::patch('/page/{pg}', [IndexController::class, 'updatePage'])->name('page.u
 Route::get('/page/{pg}/delete', [IndexController::class, 'showDeletePageForm'])->name('page.delete');
 Route::delete('/page/{pg}', [IndexController::class, 'deletePage'])->name('page.destroy');
 
-Route::get('/posts', [PostsController::class, 'allPosts']);
+Route::get('/posts', [PostsController::class, 'allPosts'])->name('posts.all');
+Route::get('/posts/add', [PostsController::class, 'addPost'])->name('posts.add');
+Route::post('/posts/save', [PostsController::class, 'savePost'])->name('posts.save');
 Route::get('/post/{category_url}/{post_url}', [PostsController::class, 'pagePost']);
 
 

@@ -10,6 +10,7 @@ class Posts extends Model
     use HasFactory;
 
     protected $table = 'posts';
+    protected $fillable = ['title', 'preview', 'content', 'image', 'description', 'keywords', 'url', 'category_id', 'create_date', 'edit_date'];
 
     public function category()
     {

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="@yield('description')">
-{{--    <meta name="keywords" content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">--}}
+    <meta name="keywords" content="@yield('keywords')">
 {{--    <meta name="author" content="elemis">--}}
     <title>@yield('title')</title>
     <link rel="shortcut icon" href="./assets/img/favicon.png">
@@ -41,7 +41,7 @@
                                 <a class="nav-link scroll" href="#about-project">О проекте</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <!-- <a class="nav-link" href="#" data-bs-toggle="dropdown">Blog</a> -->
+                                <a class="nav-link" href="{{ route('posts.all') }}">Статьи</a>
                             </li>
                             <li class="nav-item dropdown dropdown-mega">
                                 <!-- <a class="nav-link" href="#" data-bs-toggle="dropdown">Blocks</a> -->
@@ -102,37 +102,7 @@
 @yield('main')
 </div>
 <!-- /.content-wrapper -->
-    <footer class="bg-dark text-inverse mt-5 mt-md-16">
-        <div class="container py-13 py-md-15">
-            <div class="row gy-6 gy-lg-0">
-                <div class="col-md-4 col-lg-3">
-                    <div class="widget">
-                        <img class="mb-4" src="./assets/img/logo-light.png" srcset="./assets/img/logo-light@2x.png 2x" alt="" />
-                        <p class="mb-4 text-wrap">© 2022 Razoblachitel.com <br class="d-none d-lg-block" />describe@razoblachitel.online<br class="d-none d-lg-block" />Все права защищены.</p>
-                        <!-- <nav class="nav social social-white">
-                  <a href="#"><i class="uil uil-twitter"></i></a>
-                  <a href="#"><i class="uil uil-facebook-f"></i></a>
-                  <a href="#"><i class="uil uil-dribbble"></i></a>
-                  <a href="#"><i class="uil uil-instagram"></i></a>
-                  <a href="#"><i class="uil uil-youtube"></i></a>
-                </nav> -->
-                        <!-- /.social -->
-                    </div>
-                    <!-- /.widget -->
-                </div>
-                <!-- /column -->
-            </div>
-            <!--/.row -->
-        </div>
-        <!-- /.container -->
-    </footer>
-    <div class="progress-wrap">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
-    </div>
-    <script src="{{ asset('assets/js/plugins.js') }}"></script>
-    <script src="{{ asset('assets/js/theme.js') }}"></script>
+@include('layouts.include.footer')
 </body>
 
 </html>

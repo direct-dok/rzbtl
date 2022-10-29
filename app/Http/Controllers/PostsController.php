@@ -31,4 +31,30 @@ class PostsController extends Controller
         }
         return view('post', ['post' => $post, 'category' => $category->name]);
     }
+
+    public function addPost()
+    {
+        $all_categories = Categories::all();
+        return view('add_post', ['categories' => $all_categories]);
+    }
+
+    public function savePost(Request $request)
+    {
+        $path_img = $request->file('image')->store('uploads', 'public_img');
+
+        Posts::create([
+            'title' => $request->title,
+            'preview' => $request->preview,
+            'content' => $request->content,
+            'image' => '/storage/images/' . $path_img,
+            'url' => $request->url,
+            'category_id' => $request->category_id,
+            'description' => $request->description,
+            'keywords' => $request->keywords,
+            'create_date' => date('Y-m-d h:i:s'),
+            'edit_date' => date('Y-m-d h:i:s'),
+        ]);
+
+        return redirect()->route('home');
+    }
 }
