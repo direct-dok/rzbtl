@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\IndexController;
 use \App\Http\Controllers\HomeController;
+use \App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,8 @@ Route::patch('/page/{pg}', [IndexController::class, 'updatePage'])->name('page.u
 Route::get('/page/{pg}/delete', [IndexController::class, 'showDeletePageForm'])->name('page.delete');
 Route::delete('/page/{pg}', [IndexController::class, 'deletePage'])->name('page.destroy');
 
-Route::get('/blog/podstavi/{url}', [BlogController::class, 'blogPost']);
+Route::get('/posts', [PostsController::class, 'allPosts']);
+Route::get('/post/{category_url}/{post_url}', [PostsController::class, 'pagePost']);
+
 
 Route::get('/{url}', [IndexController::class, 'show_page']);
