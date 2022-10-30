@@ -6,7 +6,7 @@
             <div class="container py-8 py-md-10 text-center">
                 <div class="row">
                     <div class="col-lg-10 col-xxl-8 mx-auto">
-                        <h1 class="display-1 mb-1">Страницы сайта</h1>
+                        <h1 class="display-1 mb-1">Посты в блоге</h1>
                     </div>
                     <!-- /column -->
                 </div>
@@ -28,14 +28,14 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($pages as $page)
+                @foreach($posts as $post)
                     <tr>
-                        <th scope="row">{{ $page->id }}</th>
-                        <td>{{ $page->title }}</td>
-                        <td><a href="/{{ $page->url }}" target="_blank">{{ $page->title }}</a></td>
+                        <th scope="row">{{ $post->id }}</th>
+                        <td>{{ $post->title }}</td>
+                        <td><a href="/post{{ $categories[$post->category_id]['url'] }}{{ $post->url }}" target="_blank">Посмотреть</a></td>
                         <td>
-                            <a href="{{ route('page.delete', ['pg' => $page->id]) }}" class="btn btn-circle btn-red btn-sm"><i class="uil uil-trash-alt"></i></a>
-                            <a href="{{ route('page.edit', ['pg' => $page->id]) }}" class="btn btn-circle btn-sky btn-sm"><i class="uil uil-edit-alt"></i></a>
+                            <a href="{{ route('page.delete', ['pg' => $post->id]) }}" class="btn btn-circle btn-red btn-sm"><i class="uil uil-trash-alt"></i></a>
+                            <a href="{{ route('post.edit', ['post' => $post->id]) }}" class="btn btn-circle btn-sky btn-sm"><i class="uil uil-edit-alt"></i></a>
                         </td>
                     </tr>
                 @endforeach
