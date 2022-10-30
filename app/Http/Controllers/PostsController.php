@@ -86,24 +86,32 @@ class PostsController extends Controller
             'title' => $request->title,
             'preview' => $request->preview,
             'content' => $request->content,
-//            'image' => '/storage/images/' . $path_img,
             'url' => $request->url,
             'category_id' => $request->category_id,
             'description' => $request->description,
             'keywords' => $request->keywords,
             'updated_at' => strtotime("now"),
-//            'create_date' => date('Y-m-d h:i:s'),
-//            'edit_date' => date('Y-m-d h:i:s'),
         ];
 
         if($request->file('image')) {
             $arr_path_img = explode('/', $post->image);
             Storage::disk('public')->delete('\\images\\uploads\\' . end($arr_path_img));
-            $array_post_data['image'] = $request->file('image')->store('uploads', 'public_img');
+            $array_post_data['image'] = '/storage/images/' . $request->file('image')->store('uploads', 'public_img');
         }
 
         $post->fill($array_post_data);
         $post->save();
+        return redirect()->route('home');
+    }
+
+    public function showDeletePostForm(Posts $post)
+    {
+        return view('delete_post', ['post' => $post]);
+    }
+
+    public function deletePost(Posts $post)
+    {
+        $post->delete();
         return redirect()->route('home');
     }
 }

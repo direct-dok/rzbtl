@@ -34,7 +34,7 @@
                         <td>{{ $post->title }}</td>
                         <td><a href="/post{{ $categories[$post->category_id]['url'] }}{{ $post->url }}" target="_blank">Посмотреть</a></td>
                         <td>
-                            <a href="{{ route('page.delete', ['pg' => $post->id]) }}" class="btn btn-circle btn-red btn-sm"><i class="uil uil-trash-alt"></i></a>
+                            <a href="{{ route('post.delete', ['post' => $post->id]) }}" class="btn btn-circle btn-red btn-sm"><i class="uil uil-trash-alt"></i></a>
                             <a href="{{ route('post.edit', ['post' => $post->id]) }}" class="btn btn-circle btn-sky btn-sm"><i class="uil uil-edit-alt"></i></a>
                         </td>
                     </tr>
