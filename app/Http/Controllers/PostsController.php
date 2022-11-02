@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Posts;
 use App\Models\Categories;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -53,7 +54,7 @@ class PostsController extends Controller
         return redirect()->route('home');
     }
 
-    public function showAllPosts()
+    public function showAllPosts(User $user)
     {
         $posts = Posts::all();
         $categories = $this->getCategories();

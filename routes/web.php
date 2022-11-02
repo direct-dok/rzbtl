@@ -44,5 +44,4 @@ Route::get('/post/{category_url}/{post_url}', [PostsController::class, 'pagePost
 
 Route::get('/post/all', [PostsController::class, 'showAllPosts'])->name('posts.all.admin');
 
-
 Route::get('/{url}', [IndexController::class, 'show_page']);
