@@ -31,17 +31,20 @@
                     </div>
                     <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
                         <ul class="navbar-nav">
-                            <li class="nav-item dropdown dropdown-mega">
+                            <li class="nav-item">
                                 <a class="nav-link scroll" href="#vidy-podstav">Виды подстав</a>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item">
                                 <a class="nav-link scroll" href="#how-action">Как действовать?</a>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item">
                                 <a class="nav-link scroll" href="#about-project">О проекте</a>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('posts.all') }}">Статьи</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/contacts">Контакты</a>
                             </li>
                             <li class="nav-item dropdown dropdown-mega">
                                 <!-- <a class="nav-link" href="#" data-bs-toggle="dropdown">Blocks</a> -->
@@ -65,7 +68,7 @@
                 <div class="navbar-other w-100 d-flex ms-auto">
                     <ul class="navbar-nav flex-row align-items-center ms-auto">
                         <li class="text-white d-none d-lg-block">
-                            <a class="text-white" href="mailto:describe@razoblachitel.online">describe@razoblachitel.online</a>
+                            <a class="text-white nav-link" href="mailto:describe@razoblachitel.online">describe@razoblachitel.online</a>
                         </li>
                         <li class="nav-item d-lg-none"><a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-info"><i class="uil uil-info-circle"></i></a></li>
                         <li class="nav-item d-lg-none">

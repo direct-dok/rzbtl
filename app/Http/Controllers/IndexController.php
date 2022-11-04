@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pages;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class IndexController extends Controller
 {
@@ -17,30 +18,34 @@ class IndexController extends Controller
     {
         $page = Pages::where('url', $url)->first();
         if($page) {
-            $result = $page->title . "<br>";
-            $result .= $page->content . "<br>";
-            $result .= $page->url . "<br>";
+            return view('page', ['page' => $page]);
         } else {
             abort(404);
         }
-
-        return response($result)
-            ->header('Content-Type', 'text/html');
     }
 
     public function showAllPages()
     {
+        if(!Gate::allows('access-admin')) {
+            abort(403);
+        }
         $pages = Pages::all();
         return view('all_pages', ['pages' => $pages]);
     }
 
     public function showAddPageForm()
     {
+        if(!Gate::allows('access-admin')) {
+            abort(403);
+        }
         return view('add_page');
     }
 
     public function savePage(Request $request)
     {
+        if(!Gate::allows('access-admin')) {
+            abort(403);
+        }
         Pages::create([
             'title' => $request->title,
             'content' => $request->content,
@@ -49,16 +54,22 @@ class IndexController extends Controller
             'keywords' => $request->keywords,
         ]);
 
-        return redirect()->route('home');
+        return redirect()->route('page.all');
     }
 
     public function showEditPageForm(Pages $pg)
     {
+        if(!Gate::allows('access-admin')) {
+            abort(403);
+        }
         return view('edit_page', ['page' => $pg]);
     }
 
     public function updatePage(Request $request, Pages $pg)
     {
+        if(!Gate::allows('access-admin')) {
+            abort(403);
+        }
         $pg->fill([
             'title' => $request->title,
             'content' => $request->content,
@@ -68,17 +79,23 @@ class IndexController extends Controller
         ]);
 
         $pg->save();
-        return redirect()->route('home');
+        return redirect()->route('page.all');
     }
 
     public function showDeletePageForm(Pages $pg)
     {
+        if(!Gate::allows('access-admin')) {
+            abort(403);
+        }
         return view('delete_page', ['page' => $pg]);
     }
 
     public function deletePage(Pages $pg)
     {
+        if(!Gate::allows('access-admin')) {
+            abort(403);
+        }
         $pg->delete();
-        return redirect()->route('home');
+        return redirect()->route('page.all');
     }
 }

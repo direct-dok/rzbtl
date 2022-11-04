@@ -59,7 +59,7 @@
                                         <div class="card-footer">
                                             <ul class="post-meta d-flex mb-0">
                                                 <li class="post-date"><i class="uil uil-calendar-alt"></i><span>{{ $post->getDate() }}</span></li>
-                                                <li class="post-comments"><a href="#"><i class="uil uil-comment"></i>4</a></li>
+{{--                                                <li class="post-comments"><a href="#"><i class="uil uil-comment"></i>4</a></li>--}}
 {{--                                                <li class="post-likes ms-auto"><a href="#"><i class="uil uil-heart-alt"></i>5</a></li>--}}
                                             </ul>
                                             <!-- /.post-meta -->
@@ -74,24 +74,24 @@
                         <!-- /.row -->
                     </div>
                     <!-- /.blog -->
-                    <nav class="d-flex" aria-label="pagination">
-                        <ul class="pagination">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true"><i class="uil uil-arrow-left"></i></span>
-                                </a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true"><i class="uil uil-arrow-right"></i></span>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- /.pagination -->
-                    </nav>
+{{--                    <nav class="d-flex" aria-label="pagination">--}}
+{{--                        <ul class="pagination">--}}
+{{--                            <li class="page-item disabled">--}}
+{{--                                <a class="page-link" href="#" aria-label="Previous">--}}
+{{--                                    <span aria-hidden="true"><i class="uil uil-arrow-left"></i></span>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                            <li class="page-item active"><a class="page-link" href="#">1</a></li>--}}
+{{--                            <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
+{{--                            <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
+{{--                            <li class="page-item">--}}
+{{--                                <a class="page-link" href="#" aria-label="Next">--}}
+{{--                                    <span aria-hidden="true"><i class="uil uil-arrow-right"></i></span>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                        <!-- /.pagination -->--}}
+{{--                    </nav>--}}
                     <!-- /nav -->
                 </div>
                 <!-- /column -->

@@ -15,17 +15,17 @@
 
 <body>
 <div class="content-wrapper">
-    <header class="wrapper bg-soft-primary">
-        <nav class="navbar navbar-expand-lg center-nav transparent navbar-light">
+    <header class="wrapper bg-gray">
+        <nav class="navbar navbar-expand-lg center-nav navbar-light navbar-bg-light">
             <div class="container flex-lg-row flex-nowrap align-items-center">
                 <div class="navbar-brand w-100">
                     <a href="/">
-                        <img src="/assets/img/logo.png" srcset="/assets/img/logo@2x.png 2x" alt="" />
+                        <img src="./assets/img/logo.png" srcset="./assets/img/logo@2x.png 2x" alt="" />
                     </a>
                 </div>
                 <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                     <div class="offcanvas-header d-lg-none">
-                        <h3 class="text-white fs-30 mb-0">Sandbox</h3>
+                        <h3 class="text-white fs-30 mb-0">Разоблачитель</h3>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
@@ -59,7 +59,6 @@
                                 <!-- /.social -->
                             </div>
                         </div>
-                        <!-- /.offcanvas-footer -->
                     </div>
                     <!-- /.offcanvas-body -->
                 </div>
@@ -80,7 +79,6 @@
             </div>
             <!-- /.container -->
         </nav>
-        <!-- /.navbar -->
         <div class="offcanvas offcanvas-end text-inverse" id="offcanvas-info" data-bs-scroll="true">
             <div class="offcanvas-header">
                 <h3 class="text-white fs-24 mb-0">Контакты</h3>
@@ -99,20 +97,28 @@
             </div>
             <!-- /.offcanvas-body -->
         </div>
-        <div class="offcanvas offcanvas-top bg-light" id="offcanvas-search" data-bs-scroll="true">
-            <div class="container d-flex flex-row py-6">
-                <form class="search-form w-100">
-                    <input id="search-form" type="text" class="form-control" placeholder="Type keyword and hit enter">
-                </form>
-                <!-- /.search-form -->
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <!-- /.navbar -->
+    </header>
+    <!-- /header -->
+    <section class="section-frame overflow-hidden mb-md-12 mb-sm-6 mb-4">
+        <div class="wrapper bg-soft-blue">
+            <div class="container py-13 py-md-17 text-center">
+                <div class="row">
+                    <div class="col-lg-10 col-xxl-8 mx-auto">
+                        <h1 class="display-1 mb-1">
+                            @yield('title')
+                        </h1>
+                    </div>
+                    <!-- /column -->
+                </div>
+                <!-- /.row -->
             </div>
             <!-- /.container -->
         </div>
-        <!-- /.offcanvas -->
-    </header>
-    <!-- /header -->
-    @yield('content')
+        <!-- /.wrapper -->
+    </section>
+    <!-- /section -->
+@yield('main')
 </div>
 <!-- /.content-wrapper -->
 @include('layouts.include.footer')
