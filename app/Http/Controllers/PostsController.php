@@ -27,7 +27,7 @@ class PostsController extends Controller
         if(!($post && $category)) {
             abort(404);
         }
-        return view('post', ['post' => $post, 'category' => $category->name]);
+        return view('post', ['post' => $post, 'category' => $category]);
     }
 
     public function addPost()
@@ -136,5 +136,18 @@ class PostsController extends Controller
         }
         $post->delete();
         return redirect()->route('home');
+    }
+
+    public function categoryPosts($category)
+    {
+        $category = Categories::where('url', '/' . $category)->first();
+        if(!$category) {
+            abort(404);
+        }
+
+        $posts = $category->posts;
+        $categories = $this->getCategories();
+
+        return view('all_posts', ['posts' => $posts, 'categories' => $categories, 'category' => $category]);
     }
 }

@@ -11,8 +11,8 @@
                 <div class="col-md-10 col-xl-8 mx-auto">
                     <div class="post-header">
                         <div class="post-category text-line">
-                            <a href="#" class="hover" rel="category">
-                                {{ $category }}
+                            <a href="/posts{{ $category->url }}" class="hover" rel="category">
+                                {{ $category->name }}
                             </a>
                         </div>
                         <!-- /.post-category -->
