@@ -6,39 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="@yield('description')">
     <meta name="keywords" content="@yield('keywords')">
-{{--    <meta name="author" content="elemis">--}}
+    {{--    <meta name="author" content="elemis">--}}
     <title>@yield('title')</title>
-    <link rel="shortcut icon" href="./assets/img/favicon.png">
+    <link rel="shortcut icon" href="/assets/img/favicon.png">
     <link rel="stylesheet" href="{{ asset('assets/css/plugins.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
 
 <body>
 <div class="content-wrapper">
-    <header class="wrapper bg-soft-primary">
-        <nav class="navbar navbar-expand-lg center-nav transparent position-absolute navbar-dark">
+    <header class="wrapper bg-gray">
+        <nav class="navbar navbar-expand-lg center-nav navbar-light navbar-bg-light">
             <div class="container flex-lg-row flex-nowrap align-items-center">
                 <div class="navbar-brand w-100">
                     <a href="/">
-                        <img class="logo-dark" src="./assets/img/logo.png" srcset="./assets/img/logo@2x.png 2x" alt="" />
-                        <img class="logo-light" src="./assets/img/logo-light.png" srcset="./assets/img/logo-light@2x.png 2x" alt="" />
+                        <img src="./assets/img/logo.png" srcset="./assets/img/logo@2x.png 2x" alt="" />
                     </a>
                 </div>
                 <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                     <div class="offcanvas-header d-lg-none">
-                        <h3 class="text-white fs-24 mb-0">Разоблачитель</h3>
+                        <h3 class="text-white fs-30 mb-0">Разоблачитель</h3>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link scroll" href="#vidy-podstav">Виды подстав</a>
+                                <a class="nav-link" href="/#vidy-podstav">Виды подстав</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link scroll" href="#how-action">Как действовать?</a>
+                                <a class="nav-link" href="/#how-action">Как действовать?</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link scroll" href="#about-project">О проекте</a>
+                                <a class="nav-link" href="/#about-project">О проекте</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('posts.all') }}">Статьи</a>
@@ -60,15 +59,14 @@
                                 <!-- /.social -->
                             </div>
                         </div>
-                        <!-- /.offcanvas-footer -->
                     </div>
                     <!-- /.offcanvas-body -->
                 </div>
                 <!-- /.navbar-collapse -->
                 <div class="navbar-other w-100 d-flex ms-auto">
                     <ul class="navbar-nav flex-row align-items-center ms-auto">
-                        <li class="text-white d-none d-lg-block">
-                            <a class="text-white nav-link" href="mailto:describe@razoblachitel.online">describe@razoblachitel.online</a>
+                        <li class="d-none d-lg-block">
+                            <a class="text-navy nav-link" href="mailto:describe@razoblachitel.online">describe@razoblachitel.online</a>
                         </li>
                         <li class="nav-item d-lg-none"><a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-info"><i class="uil uil-info-circle"></i></a></li>
                         <li class="nav-item d-lg-none">
@@ -81,7 +79,6 @@
             </div>
             <!-- /.container -->
         </nav>
-        <!-- /.navbar -->
         <div class="offcanvas offcanvas-end text-inverse" id="offcanvas-info" data-bs-scroll="true">
             <div class="offcanvas-header">
                 <h3 class="text-white fs-24 mb-0">Контакты</h3>
@@ -100,8 +97,27 @@
             </div>
             <!-- /.offcanvas-body -->
         </div>
+        <!-- /.navbar -->
     </header>
     <!-- /header -->
+    <section class="section-frame overflow-hidden mb-md-12 mb-sm-6 mb-4">
+        <div class="wrapper bg-soft-blue">
+            <div class="container py-13 py-md-17 text-center">
+                <div class="row">
+                    <div class="col-lg-10 col-xxl-8 mx-auto">
+                        <h1 class="display-1 mb-1">
+                            @yield('title')
+                        </h1>
+                    </div>
+                    <!-- /column -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.wrapper -->
+    </section>
+    <!-- /section -->
 @yield('main')
 </div>
 <!-- /.content-wrapper -->

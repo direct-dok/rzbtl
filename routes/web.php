@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\IndexController;
 use \App\Http\Controllers\HomeController;
+use \App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,5 +31,18 @@ Route::get('/page/{pg}/edit', [IndexController::class, 'showEditPageForm'])->nam
 Route::patch('/page/{pg}', [IndexController::class, 'updatePage'])->name('page.update');
 Route::get('/page/{pg}/delete', [IndexController::class, 'showDeletePageForm'])->name('page.delete');
 Route::delete('/page/{pg}', [IndexController::class, 'deletePage'])->name('page.destroy');
+
+
+Route::get('/posts', [PostsController::class, 'allPosts'])->name('posts.all');
+Route::get('/posts/add', [PostsController::class, 'addPost'])->name('posts.add');
+Route::get('/post/{post}/edit', [PostsController::class, 'showEditPostForm'])->name('post.edit');
+Route::get('/post/{post}/delete', [PostsController::class, 'showDeletePostForm'])->name('post.delete');
+Route::get('/posts/{category}', [PostsController::class, 'categoryPosts'])->name('posts.category');
+Route::post('/posts/save', [PostsController::class, 'savePost'])->name('posts.save');
+Route::delete('/post/{post}', [PostsController::class, 'deletePost'])->name('post.destroy');
+Route::patch('/post/{post}', [PostsController::class, 'updatePost'])->name('post.update');
+Route::get('/post/{category_url}/{post_url}', [PostsController::class, 'pagePost']);
+
+Route::get('/post/all', [PostsController::class, 'showAllPosts'])->name('posts.all.admin');
 
 Route::get('/{url}', [IndexController::class, 'show_page']);

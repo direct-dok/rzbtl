@@ -1,4 +1,4 @@
-@extends('layouts.layouts')
+@extends('layouts.layouts_page')
 
 @section('title', $page->title)
 @section('description', $page->description)
