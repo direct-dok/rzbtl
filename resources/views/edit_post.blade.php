@@ -22,7 +22,7 @@
                 @csrf
                 @method('PATCH')
                 <div class="form-floating mb-4">
-                    <input id="textInputExample" type="text" value="{{ $post->title }}" class="form-control" placeholder="Text Input" name="title">
+                    <input id="textInputExample" type="text" value="{{ $post->title }}" class="form-control" name="title">
                     <label for="textInputExample">Название статьи</label>
                 </div>
 
@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="form-floating mb-4">
-                    <input id="textInputExample" type="text" value="{{ $post->image }}" class="form-control" placeholder="Text Input" name="old_img">
+                    <input id="textInputExample" type="text" value="{{ $post->image }}" class="form-control" name="old_img">
                     <label for="textInputExample">Текущее изображение статьи (ниже вы можете загрузить новое)</label>
                 </div>
 
@@ -59,22 +59,22 @@
                 </div>
 
                 <div class="form-floating mb-4">
-                    <input id="textInputExample" type="text" value="{{ $post->url }}" class="form-control" placeholder="Text Input" name="url">
+                    <input id="textInputExample" type="text" value="{{ $post->url }}" class="form-control" name="url">
                     <label for="textInputExample">Адрес страницы (URL, со слешем в начале)</label>
                 </div>
 
                 <div class="form-floating mb-4">
-                    <input id="textInputExample" type="text" value="{{ $post->seo_title }}" class="form-control" placeholder="Text Input" name="seo_title">
+                    <input id="textInputExample" type="text" value="{{ $post->seo_title }}" class="form-control" name="seo_title">
                     <label for="textareaExample">Title (SEO)</label>
                 </div>
 
                 <div class="form-floating mb-4">
-                    <input id="textInputExample" type="text" value="{{ $post->description }}" class="form-control" placeholder="Text Input" name="description">
+                    <input id="textInputExample" type="text" value="{{ $post->description }}" class="form-control" name="description">
                     <label for="textareaExample">Description (SEO)</label>
                 </div>
 
                 <div class="form-floating mb-4">
-                    <input id="textInputExample" type="text" value="{{ $post->keywords }}" class="form-control" placeholder="Text Input" name="keywords">
+                    <input id="textInputExample" type="text" value="{{ $post->keywords }}" class="form-control" name="keywords">
                     <label for="textareaExample">Keywords (SEO)</label>
                 </div>
 
