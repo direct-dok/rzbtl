@@ -1,6 +1,6 @@
 @extends('layouts.layouts_posts')
 
-@section('title', $post->title)
+@section('title', $post->seo_title)
 @section('description', $post->description)
 @section('keywords', $post->keywords)
 

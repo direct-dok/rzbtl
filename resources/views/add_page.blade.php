@@ -32,7 +32,12 @@
 
                 <div class="form-floating mb-4">
                     <input id="textInputExample" type="text" class="form-control" placeholder="Text Input" name="url">
-                    <label for="textInputExample">Адрес страницы (URL)</label>
+                    <label for="textInputExample">Адрес страницы (URL, без слеша в начале)</label>
+                </div>
+
+                <div class="form-floating mb-4">
+                    <input id="textInputExample" type="text" class="form-control" placeholder="Text Input" name="seo_title">
+                    <label for="textareaExample">Title (SEO)</label>
                 </div>
 
                 <div class="form-floating mb-4">

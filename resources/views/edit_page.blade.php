@@ -39,6 +39,11 @@
                 </div>
 
                 <div class="form-floating mb-4">
+                    <input id="textInputExample" value="{{ $page->seo_title }}" type="text" class="form-control" placeholder="Text Input" name="seo_title">
+                    <label for="textareaExample">Title (SEO)</label>
+                </div>
+
+                <div class="form-floating mb-4">
                     <input id="textInputExample" value="{{ $page->description }}" type="text" class="form-control" placeholder="Text Input" name="description">
                     <label for="textareaExample">Description (SEO)</label>
                 </div>

@@ -5,14 +5,14 @@
 @section('content')
     <section class="wrapper bg-soft-primary">
         @if(isset($category))
-            @section('title', $category->title)
+            @section('title', $category->seo_title)
             @section('description', $category->description)
             @section('keywords', $category->keywords)
             <div class="container pt-10 pb-19 pt-md-14 pb-md-14 mb-9 text-center">
                 <div class="row">
                     <div class="col-md-7 col-lg-6 col-xl-5 mx-auto">
                         <h1 class="display-1 mb-3">{{ $category->name }}</h1>
-                        <p class="lead px-lg-5 px-xxl-8">Здесь мы публикуем самые интересные статьи нашей компании</p>
+                        <p class="lead px-lg-5 px-xxl-8">{{ $category->preview }}</p>
                     </div>
                     <!-- /column -->
                 </div>
@@ -21,8 +21,8 @@
             <!-- /.container -->
         @else
             @section('title', 'Блог сайта Разоблачитель')
-            @section('description', 'Сео описание Разоблачитель')
-            @section('keywords', 'Сео кейвордс Разоблачитель')
+            @section('description', 'В нашем блоге Вы найдете информацию которая поможет Вам защититься от неправомерных действий на дорогах, а также информацию связанную со страховым мошенничеством')
+            @section('keywords', 'Авто подставы, мошенничество, страховое мошенничество, ДТП')
         <div class="container pt-10 pb-19 pt-md-14 pb-md-14 mb-9 text-center">
             <div class="row">
                 <div class="col-md-7 col-lg-6 col-xl-5 mx-auto">
