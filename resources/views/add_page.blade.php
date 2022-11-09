@@ -21,7 +21,7 @@
             <form action="{{ route('page.save') }}" method="POST">
                 @csrf
                 <div class="form-floating mb-4">
-                    <input id="textInputExample" type="text" class="form-control" placeholder="Text Input" name="title">
+                    <input id="textInputExample" type="text" class="form-control" name="title">
                     <label for="textInputExample">Название страницы</label>
                 </div>
 
@@ -31,17 +31,22 @@
                 </div>
 
                 <div class="form-floating mb-4">
-                    <input id="textInputExample" type="text" class="form-control" placeholder="Text Input" name="url">
-                    <label for="textInputExample">Адрес страницы (URL)</label>
+                    <input id="textInputExample" type="text" class="form-control" name="url">
+                    <label for="textInputExample">Адрес страницы (URL, без слеша в начале)</label>
                 </div>
 
                 <div class="form-floating mb-4">
-                    <input id="textInputExample" type="text" class="form-control" placeholder="Text Input" name="description">
+                    <input id="textInputExample" type="text" class="form-control" name="seo_title">
+                    <label for="textareaExample">Title (SEO)</label>
+                </div>
+
+                <div class="form-floating mb-4">
+                    <input id="textInputExample" type="text" class="form-control" name="description">
                     <label for="textareaExample">Description (SEO)</label>
                 </div>
 
                 <div class="form-floating mb-4">
-                    <input id="textInputExample" type="text" class="form-control" placeholder="Text Input" name="keywords">
+                    <input id="textInputExample" type="text" class="form-control" name="keywords">
                     <label for="textareaExample">Keywords (SEO)</label>
                 </div>
 

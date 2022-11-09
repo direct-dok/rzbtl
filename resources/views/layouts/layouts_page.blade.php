@@ -106,7 +106,7 @@
                 <div class="row">
                     <div class="col-lg-10 col-xxl-8 mx-auto">
                         <h1 class="display-1 mb-1">
-                            @yield('title')
+                            @yield('caption')
                         </h1>
                     </div>
                     <!-- /column -->

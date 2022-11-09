@@ -50,6 +50,7 @@ class IndexController extends Controller
             'title' => $request->title,
             'content' => $request->content,
             'url' => $request->url,
+            'seo_title' => $request->seo_title,
             'description' => $request->description,
             'keywords' => $request->keywords,
         ]);
@@ -74,6 +75,7 @@ class IndexController extends Controller
             'title' => $request->title,
             'content' => $request->content,
             'url' => $request->url,
+            'seo_title' => $request->seo_title,
             'description' => $request->description,
             'keywords' => $request->keywords,
         ]);
