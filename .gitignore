@@ -14,3 +14,6 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+no
+public_html
+satisfiable
