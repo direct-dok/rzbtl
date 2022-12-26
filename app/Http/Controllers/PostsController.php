@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comments;
 use App\Models\Posts;
 use App\Models\Categories;
 use App\Models\User;
@@ -27,7 +28,9 @@ class PostsController extends Controller
         if(!($post && $category)) {
             abort(404);
         }
-        return view('post', ['post' => $post, 'category' => $category]);
+        $comments = $post->comments->where('approved', 1);
+        $comments->sortByDesc('created_at');
+        return view('post', ['post' => $post, 'category' => $category, 'comments' => $comments]);
     }
 
     public function addPost()

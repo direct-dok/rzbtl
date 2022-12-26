@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\IndexController;
 use \App\Http\Controllers\HomeController;
 use \App\Http\Controllers\PostsController;
+use \App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,15 @@ Route::post('/posts/save', [PostsController::class, 'savePost'])->name('posts.sa
 Route::delete('/post/{post}', [PostsController::class, 'deletePost'])->name('post.destroy');
 Route::patch('/post/{post}', [PostsController::class, 'updatePost'])->name('post.update');
 Route::get('/post/{category_url}/{post_url}', [PostsController::class, 'pagePost']);
+
+Route::post('/comment/save', [CommentController::class, 'saveComment'])->name('comment.save');
+Route::get('/comments/all', [CommentController::class, 'allComments'])->name('comments.all');
+Route::get('/comment/approved/page/{id}', [CommentController::class, 'showApprovedPage'])->name('comment.approved.page');
+Route::post('/comment/approved/{id}', [CommentController::class, 'approvedComment'])->name('comment.approved');
+Route::get('/comment/edit/{id}', [CommentController::class, 'editCommentPage'])->name('edit.comment.page');
+Route::patch('/comment/{id}', [CommentController::class, 'updateComment'])->name('comment.update');
+Route::get('/comment/delete/{id}', [CommentController::class, 'deletePageComment'])->name('comment.delete.page');
+Route::delete('/comment/delete/{comment}', [CommentController::class, 'deleteComment'])->name('comment.delete');
 
 Route::get('/post/all', [PostsController::class, 'showAllPosts'])->name('posts.all.admin');
 

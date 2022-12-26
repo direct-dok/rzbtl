@@ -21,4 +21,9 @@ class Posts extends Model
     {
         return date('Y-m-d', strtotime($this->create_date));
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comments::class, 'post_id')->orderByDesc('created_at');
+    }
 }

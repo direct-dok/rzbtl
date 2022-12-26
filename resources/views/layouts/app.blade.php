@@ -73,6 +73,8 @@
 
                                     <a class="dropdown-item" href="{{ route('posts.all.admin') }}">Статьи сайта</a>
 
+                                    <a class="dropdown-item" href="{{ route('comments.all') }}">Комментарии</a>
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
