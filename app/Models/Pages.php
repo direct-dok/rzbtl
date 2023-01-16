@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Pages extends Model
 {
     protected $table = 'pages';
-    protected $fillable = ['title', 'content', 'description', 'keywords', 'url', 'seo_title'];
+    protected $fillable = ['title', 'subtitle', 'content', 'description', 'keywords', 'url', 'seo_title'];
 }

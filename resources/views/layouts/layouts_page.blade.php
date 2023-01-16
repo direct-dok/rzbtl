@@ -108,6 +108,9 @@
                         <h1 class="display-1 mb-1">
                             @yield('caption')
                         </h1>
+                        @if(isset($page->subtitle))
+                            <p class="lead px-md-12 px-lg-12 px-xl-15 px-xxl-18">{{ $page->subtitle }}</p>
+                        @endif
                     </div>
                     <!-- /column -->
                 </div>

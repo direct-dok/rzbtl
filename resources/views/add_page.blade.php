@@ -26,6 +26,11 @@
                 </div>
 
                 <div class="form-floating mb-4">
+                    <input id="textInputExample" type="text" class="form-control" name="subtitle">
+                    <label for="textInputExample">Подзаголовок страницы</label>
+                </div>
+
+                <div class="form-floating mb-4">
                     <textarea id="textareaExample" class="form-control" placeholder="Textarea" style="height: 250px"  name="content" required></textarea>
                     <label for="textareaExample">Содержимое страницы</label>
                 </div>
