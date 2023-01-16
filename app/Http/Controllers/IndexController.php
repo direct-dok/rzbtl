@@ -48,6 +48,7 @@ class IndexController extends Controller
         }
         Pages::create([
             'title' => $request->title,
+            'subtitle' => $request->subtitle,
             'content' => $request->content,
             'url' => $request->url,
             'seo_title' => $request->seo_title,
@@ -73,6 +74,7 @@ class IndexController extends Controller
         }
         $pg->fill([
             'title' => $request->title,
+            'subtitle' => $request->subtitle,
             'content' => $request->content,
             'url' => $request->url,
             'seo_title' => $request->seo_title,

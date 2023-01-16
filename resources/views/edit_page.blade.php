@@ -27,6 +27,11 @@
                 </div>
 
                 <div class="form-floating mb-4">
+                    <input id="textInputExample" value="{{ $page->subtitle }}" type="text" class="form-control" name="subtitle">
+                    <label for="textInputExample">Подзаголовок страницы</label>
+                </div>
+
+                <div class="form-floating mb-4">
                     <textarea id="textareaExample" class="form-control" placeholder="Textarea" style="height: 250px"  name="content" required>
                         {{ $page->content }}
                     </textarea>
